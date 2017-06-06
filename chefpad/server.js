@@ -16,10 +16,11 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(require('./config/auth'));
 
 // Put API routes here, before the "catch all" route
-app.use('/api/events', require('./routes/events'));
-
+app.use('/api/events', require('./routes/api/events'));
+app.use('/api/users', require('./routes/api/users'));
 
 // The following "catch all" route is necessary for
 // a SPA'sclient-side routing to properly work
