@@ -11,16 +11,17 @@ const NavBar = (props) => {
       <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
     </div> :
     <div>
-      <Link to="/login" className='NavBar-link'>LOG IN</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <Link to="/signup" className='NavBar-link'>SIGN UP</Link>
+      {props.curPath !== '/login' ? <Link to="/login" className='NavBar-link navbar-right btn btn-success'>LOG IN</Link> : null}
+       &nbsp;&nbsp;&nbsp;&nbsp;
+      {props.curPath !== '/signup' ? <Link to="/signup" className='NavBar-link navbar-right btn btn-success'>SIGN UP</Link> : null}
     </div>;
 
   return (
-    <div className='NavBar'>
+    <div className='navbar navbar-default'>
       {nav}
     </div>
   );
 };
 
 export default NavBar;
+
