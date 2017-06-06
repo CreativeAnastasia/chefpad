@@ -1,11 +1,18 @@
 import React from 'react';
+import NavBar from '../../components/NavBar/NavBar';
 
-export default class HomePage extends React.Component {
+const HomePage = (props) => {
 
-  render() {
-    return (
-      <h1>Home Page</h1>
-    );
-  }
+  return (
+    <div className="HomePage">
+      <NavBar
+        user={props.user}
+        handleLogout={props.handleLogout}
+      />
+    </div>
+  );
+
 }
+
+export default HomePage;
 
