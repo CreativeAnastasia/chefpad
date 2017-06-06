@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema( {
   name: String,
   email: {type: String, required: true, lowercase: true, unique: true},
-  password: {type: String, required: true}
+  password: String,
   photo: String,
   facebookId: String,
 }, {

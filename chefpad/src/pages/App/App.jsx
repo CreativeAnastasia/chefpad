@@ -4,6 +4,9 @@ import userService from '../../utils/userService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
+import ChoosePage from '../ChoosePage/ChoosePage';
+import ChefEvent from '../ChefEvent/ChefEvent';
+import EaterEvent from '../EaterEvent/EaterEvent';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
@@ -63,6 +66,21 @@ class App extends Component {
               handleLogin={this.handleLogin}
             />
           }/>
+          <Route exact path='/choose' component={ChoosePage} />
+
+          <Route exact path='/chefevent' render={(props) =>
+            <ChefEvent
+              user={this.state.user}
+            />
+          }/>
+
+
+          <Route exact path='/eaterevent' render={(props) =>
+            <EaterEvent
+              user={this.state.user}
+            />
+          }/>
+
         </Switch>
       </div>
     );

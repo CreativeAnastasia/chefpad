@@ -61,7 +61,7 @@ class SignupForm extends Component {
 
                  <div className="row">
                   <div className="form-group col-xs-12">
-                      <input type="password" className="form-control" placeholder="Password" value={this.state.pw} onChange={(e) => this.handleChange('pw', e)} />
+                      <input type="password" className="form-control" placeholder="Password" value={this.state.password} onChange={(e) => this.handleChange('password', e)} />
                     </div>
                   </div>
 
