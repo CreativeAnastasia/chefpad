@@ -8,7 +8,7 @@ function index(req, res) {
 
 function createEvent(req, res) {
   var event = new Event(req.body);
-
+  console.log ("event", event);
   event.save()
     // Event data invalid
     .catch(err => res.status(400).json(err));

@@ -34,13 +34,20 @@ class ChefEvent extends Component {
     console.log("createing event");
     let self = this;
 
-    console.log(self);
+    console.log("self", self);
     eventService.createEvent(this.state)
-      .then(() => {
+      .then((res) => {
+        console.log("this props", this.props);
+        console.log("res", res);
         this.props.handleCreateEvent();
         self.props.history.push('/choose');
       })
+      .catch(() => {
+        console.log("error!");
+      })
+
   }
+
 
 
   render() {

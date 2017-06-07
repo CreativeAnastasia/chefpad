@@ -1,6 +1,7 @@
 const BASE_URL = '/api/events/';
 
 function createEvent(event) {
+  console.log("apievent",event)
   return fetch(BASE_URL + 'chefevent', {
     method: 'POST',
     headers: new Headers({'Content-Type': 'application/json'}),
@@ -8,10 +9,11 @@ function createEvent(event) {
   })
   .then(res => {
     if (res.ok) return res.json();
-    console.log(res.ok);
-    // throw new Error('Something went wrong!');
+    throw new Error('Something went wrong!');
   })
-  .then(data => data);
+  .then(data => {
+    data
+  });
 }
 
 export default {
