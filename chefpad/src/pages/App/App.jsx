@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route} from 'react-router-dom';
 import userService from '../../utils/userService';
+import eventService from '../../utils/eventService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
@@ -29,6 +30,11 @@ class App extends Component {
     this.setState({user: userService.getUser()});
   }
 
+
+  handleCreateEvent = () => {
+    this.setState({event: eventService.createEvent()});
+  }
+
   handleLogin = () => {
       this.setState({user: userService.getUser()});
     }
@@ -36,8 +42,12 @@ class App extends Component {
   /*---------- Lifecycle Methods ----------*/
 
   componentDidMount() {
+    console.log('componentt mounted')
     let user = userService.getUser();
     this.setState({user});
+    // let event = eventService.createEvent();
+    // this.setState({event});
+
   }
   render() {
     return (
@@ -71,6 +81,8 @@ class App extends Component {
           <Route exact path='/chefevent' render={(props) =>
             <ChefEvent
               user={this.state.user}
+              {...props}
+              handleCreateEvent={this.handleCreateEvent}
             />
           }/>
 

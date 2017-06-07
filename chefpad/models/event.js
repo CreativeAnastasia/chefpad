@@ -10,11 +10,11 @@ var eventSchema = new Schema( {
   address: {type: String},
   eventTitle: { type: String, required: true },
   firstCourseTitle: { type: String, required: true },
-  firstCoursePictureUrl: { type: String, default: "https://i.imgur.com/Tqz4DsT.png" }
+  firstCoursePictureUrl: { type: String, default: "https://i.imgur.com/Tqz4DsT.png" },
   secondCourseTitle: { type: String, required: true },
-  secondCoursePictureUrl: { type: String, default: "https://i.imgur.com/Tqz4DsT.png" }
+  secondCoursePictureUrl: { type: String, default: "https://i.imgur.com/Tqz4DsT.png" },
   thirdCourseTitle: { type: String, required: true },
-  thirdCoursePictureUrl: { type: String, default: "https://i.imgur.com/Tqz4DsT.png" }
+  thirdCoursePictureUrl: { type: String, default: "https://i.imgur.com/Tqz4DsT.png" },
   price: Number,
   limitForAttendees: Number
 }, {

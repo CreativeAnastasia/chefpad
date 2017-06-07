@@ -20,7 +20,7 @@ const ChoosePage = (props) => {
                         <div className="thumbnail">
                             <img src={"http://s3.amazonaws.com/bbcgoodfoodme/var/app/current/event_photos/73/original/nathan.png?1476697479"} alt=""/>
                             <div className="caption">
-                                <h3>Be a chef</h3>
+                                <h3>Become a chef</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p>
                                 <Link to="/chefevent" className='btn btn-primary'>Be a Chef!</Link>                                </p>
@@ -32,7 +32,7 @@ const ChoosePage = (props) => {
                         <div className="thumbnail">
                             <img src={"https://behealthy.today/wp-content/uploads/2017/03/500-Calorie-diet.jpg"} alt=""/>
                             <div className="caption">
-                                <h3>Be an eater</h3>
+                                <h3>Become an eater</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p>
                                   <Link to="/eaterevent" className='btn btn-primary'>Be an Eater!</Link>

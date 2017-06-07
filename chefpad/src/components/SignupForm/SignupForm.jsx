@@ -25,10 +25,9 @@ class SignupForm extends Component {
     e.preventDefault();
     let self = this;
     userService.signup(this.state)
-      // successfully signed up - show GamePage
       .then(() => {
         this.props.handleSignup();
-        self.props.history.push('/');
+        self.props.history.push('/choose');
       })
       // invalid user data
       .catch(err => self.props.updateMessage(err.message));

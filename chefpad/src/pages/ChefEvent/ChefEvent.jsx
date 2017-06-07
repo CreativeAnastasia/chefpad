@@ -1,23 +1,24 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import eventService from '../../utils/eventService';
 
 
 class ChefEvent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    time: '',
-    city: '',
-    address: '',
-    eventTitle: '',
-    firstCourseTitle: '',
-    firstCoursePictureUrl: '',
-    secondCourseTitle: '',
-    secondCoursePictureUrl: '',
-    thirdCourseTitle: '',
-    thirdCoursePictureUrl: '',
-    price: '',
-    limitForAttendees: ''
+    time: '18:06',
+    city: 'LA',
+    address: '123 main',
+    eventTitle: 'oijoij',
+    firstCourseTitle: 'pasta',
+    firstCoursePictureUrl: 'http://bricolage.nyc/wp-content/uploads/2014/05/dinner_pic1.jpg',
+    secondCourseTitle: 'soup',
+    secondCoursePictureUrl: 'http://bricolage.nyc/wp-content/uploads/2014/05/dinner_pic1.jpg',
+    thirdCourseTitle: 'dessert',
+    thirdCoursePictureUrl: 'http://bricolage.nyc/wp-content/uploads/2014/05/dinner_pic1.jpg',
+    price: '25',
+    limitForAttendees: '5'
     };
   }
 
@@ -27,6 +28,20 @@ class ChefEvent extends Component {
       [field]: e.target.value
     });
   }
+
+  handleCreateEvent = (e) => {
+    e.preventDefault()
+    console.log("createing event");
+    let self = this;
+
+    console.log(self);
+    eventService.createEvent(this.state)
+      .then(() => {
+        this.props.handleCreateEvent();
+        self.props.history.push('/choose');
+      })
+  }
+
 
   render() {
   return (
@@ -41,7 +56,7 @@ class ChefEvent extends Component {
                     <div className="panel panel-success">
                       <header className="panel-heading text-center">Create an event</header>
                       <div className="panel-body">
-                        <form className="form">
+                        <form className="form" onSubmit={this.handleCreateEvent}>
 
                           <div className="row">
                             <div className="form-group col-xs-6">
@@ -90,7 +105,7 @@ class ChefEvent extends Component {
                           <div className="row">
                             <div className="form-group col-xs-6">
                                 <input type="time" className="form-control" placeholder="Time for your Event" value={this.state.time} onChange={(e) => this.handleChange('time', e)} />
-                              </div>
+                            </div>
 
                               <div className="form-group col-xs-6">
                                 <input type="address" className="form-control" placeholder="Address for your Event" value={this.state.address} onChange={(e) => this.handleChange('address', e)} />
