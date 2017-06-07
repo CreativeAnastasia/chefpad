@@ -7,11 +7,18 @@ function index(req, res) {
 }
 
 function createEvent(req, res) {
+  console.log("req.body", req.body);
   var event = new Event(req.body);
-  console.log ("event", event);
+  console.log('------')
+  console.log ("hello event", event);
+  console.log('------')
   event.save()
     // Event data invalid
-    .catch(err => res.status(400).json(err));
+    .catch(err => {
+      console.log("error", err);
+;      res.status(400).json(err)
+    });
+
 }
 
 module.exports = {

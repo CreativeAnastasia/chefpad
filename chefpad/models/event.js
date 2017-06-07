@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var eventSchema = new Schema( {
   chef: {type: Schema.Types.ObjectId, ref: 'User'},
   eaters: [{type: Schema.Types.ObjectId, ref: 'User'}],
-  time: {type: Date, required: true},
+  time: {type: String, required: true},
   city: {type: String, required: true},
   address: {type: String},
   eventTitle: { type: String, required: true },
