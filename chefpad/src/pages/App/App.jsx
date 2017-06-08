@@ -7,6 +7,8 @@ import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
 import ChoosePage from '../ChoosePage/ChoosePage';
 import ChefEvent from '../ChefEvent/ChefEvent';
+import AllEvents from '../AllEvents/AllEvents';
+import DinnerEvent from '../DinnerEvent/DinnerEvent';
 import EaterEvent from '../EaterEvent/EaterEvent';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
@@ -31,8 +33,8 @@ class App extends Component {
   }
 
 
-  handleCreateEvent = () => {
-    this.setState({event: eventService.createEvent()});
+  handleCreateEvent = (event) => {
+    this.setState({event});
   }
 
   handleLogin = () => {
@@ -86,10 +88,25 @@ class App extends Component {
             />
           }/>
 
+          <Route exact path='/allevents' render={(props) =>
+            <AllEvents
+              {...props}
+              user={this.state.user}
+              events={this.state.events}
+              />
+            }/>
 
           <Route exact path='/eaterevent' render={(props) =>
             <EaterEvent
               user={this.state.user}
+            />
+          }/>
+
+          <Route exact path='/dinnerevent' render={(props) =>
+            <DinnerEvent
+              {...props}
+              user={this.state.user}
+              event={this.state.event}
             />
           }/>
 

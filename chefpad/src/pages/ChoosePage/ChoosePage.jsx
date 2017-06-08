@@ -35,7 +35,7 @@ const ChoosePage = (props) => {
                                 <h3>Become an eater</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <p>
-                                  <Link to="/eaterevent" className='btn btn-primary'>Be an Eater!</Link>
+                                  <Link to="/allevents" className='btn btn-primary'>Be an Eater!</Link>
                                 </p>
                             </div>
                         </div>

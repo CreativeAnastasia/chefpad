@@ -7,16 +7,16 @@ class ChefEvent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    time: '18:06',
-    city: 'LA',
-    address: '123 main',
-    eventTitle: 'oijoij',
-    firstCourseTitle: 'pasta',
-    firstCoursePictureUrl: 'http://bricolage.nyc/wp-content/uploads/2014/05/dinner_pic1.jpg',
-    secondCourseTitle: 'soup',
-    secondCoursePictureUrl: 'http://bricolage.nyc/wp-content/uploads/2014/05/dinner_pic1.jpg',
-    thirdCourseTitle: 'dessert',
-    thirdCoursePictureUrl: 'http://bricolage.nyc/wp-content/uploads/2014/05/dinner_pic1.jpg',
+    time: '12:00',
+    city: 'LosAn',
+    address: '123Main',
+    eventTitle: 'Italian',
+    firstCourseTitle: 'fist course',
+    firstCoursePictureUrl: 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.jpeg',
+    secondCourseTitle: 'second course',
+    secondCoursePictureUrl: 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.jpeg',
+    thirdCourseTitle: 'third',
+    thirdCoursePictureUrl: 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.jpeg',
     price: '25',
     limitForAttendees: '5'
     };
@@ -31,24 +31,16 @@ class ChefEvent extends Component {
 
   handleCreateEvent = (e) => {
     e.preventDefault()
-    console.log("createing event");
     let self = this;
-
-    console.log("self", self);
     eventService.createEvent(this.state)
-      .then((res) => {
-        console.log("this props", this.props);
-        console.log("res", res);
-        this.props.handleCreateEvent();
-        self.props.history.push('/choose');
+      .then(event => {
+        this.props.handleCreateEvent(event);
+        self.props.history.push('/dinnerevent');
       })
       .catch(() => {
         console.log("error!");
-      })
-
+      });
   }
-
-
 
   render() {
   return (

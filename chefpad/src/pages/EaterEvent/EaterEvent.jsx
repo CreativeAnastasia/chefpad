@@ -8,7 +8,7 @@ const EaterEvent = (props) => {
       <div className="container">
 
         <header className="thumbnail">
-            <h2 className="text-center">Awesome sauce Eater, choose your event now!</h2>
+            <h2 className="text-center">Here is your event</h2>
         </header>
           <Link to='/choose'>Cancel</Link>
       </div>
