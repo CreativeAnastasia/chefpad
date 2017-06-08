@@ -32,7 +32,7 @@ function createEvent(req, res) {
     });
 }
 
-function attendEvent(req, res) {
+function attend(req, res) {
   Event.findById(req.params.id).exec()
   .then(event => {
     event.eaters.push(req.user._id);
@@ -47,5 +47,5 @@ module.exports = {
   index,
   showevent,
   createEvent,
-  attendEvent
+  attend
 };

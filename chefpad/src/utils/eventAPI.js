@@ -17,6 +17,23 @@ function createEvent(event) {
   .then(event => event);
 }
 
+function attend(eventId) {
+   console.log("eventId in api", eventId);
+  return fetch(BASE_URL + eventId + '/attend', {
+    method: 'POST',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    }),
+    body: JSON.stringify(eventId)
+  })
+  .then(res => {
+    if (res.ok) return res.json();
+    throw new Error('Something went wrong!');
+  })
+  .then(eventId => eventId);
+}
+
 function index() {
   return fetch(BASE_URL + 'allevents', {
     method: 'GET',
@@ -34,5 +51,6 @@ function index() {
 
 export default {
   createEvent,
+  attend,
   index
 };

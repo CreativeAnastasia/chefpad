@@ -7,7 +7,8 @@ class AllEvents extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: []
+      events: [],
+      eaters: []
     }
   }
 
@@ -22,9 +23,13 @@ class AllEvents extends Component {
   }
 
   attend = (eventId) => {
+    console.log("event id", eventId);
     eventAPI.attend(eventId)
     .then(event => {
-
+      console.log('success event =', event)
+    })
+    .catch(err => {
+      console.log("Erro", err);
     });
   }
 
@@ -36,8 +41,8 @@ class AllEvents extends Component {
 
         <div className="container">
 
-              {this.state.events.map(event =>
-                <div>
+              {this.state.events.map((event, index) =>
+                <div key={index}>
                   <div className="jumbotron">
                   <div className="row">
                     <div className="col-md-6 col-md-offset-3">
@@ -65,7 +70,7 @@ class AllEvents extends Component {
                               </div>
 
                                 <div className="col-md-4">
-                                <div className="thumbnail">
+                                <div className="thumbnail height200">
                                   <img src={event.thirdCoursePictureUrl} alt="third course picture"/>
                                   <div className="caption">
                                     <h3>{event.thirdCourseTitle}</h3>
@@ -96,7 +101,7 @@ class AllEvents extends Component {
                       </div>
 
                       <div className="row">
-                        <div className="col-md-1 col-md-offset-11">
+                        <div className="col-md-12 text-center">
                           <button className="btn btn-danger btn-right" onClick={() => this.attend(event._id)}>Attend</button>
                         </div>
                       </div>
