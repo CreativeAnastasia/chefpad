@@ -33,6 +33,7 @@ function createEvent(req, res) {
 }
 
 function attend(req, res) {
+
   Event.findById(req.params.id).exec()
   .then(event => {
     event.eaters.push(req.user._id);

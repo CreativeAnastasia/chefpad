@@ -25,7 +25,7 @@ function attend(eventId) {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${tokenService.getToken()}`
     }),
-    body: JSON.stringify(eventId)
+    body: JSON.stringify({})
   })
   .then(res => {
     if (res.ok) return res.json();
