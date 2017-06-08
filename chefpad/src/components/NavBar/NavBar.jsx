@@ -6,10 +6,10 @@ import './NavBar.css';
 const NavBar = (props) => {
   let nav = props.user ?
     <div>
-      <Link to="/chefevent" className='NavBar-link btn btn-default'>Be a chef</Link>
-      <Link to="/allevents" className='NavBar-link btn btn-default'>Be an eater</Link>
-      <Link to="/eaterevents" className='NavBar-link btn btn-default'>Your eater events</Link>
-      <Link to="/chefevent" className='NavBar-link btn btn-default'>Your chef events</Link>
+      {(props.curPath !== '/choose' && props.curPath !== '/chefevent') && <Link to="/chefevent" className='NavBar-link btn btn-default'>Be a chef</Link>}
+      {(props.curPath !== '/choose' && props.curPath !== '/allevents') && <Link to="/allevents" className='NavBar-link btn btn-default'>Be a an eater</Link>}
+      {(props.curPath !== '/eaterevents') && <Link to="/eaterevents" className='NavBar-link btn btn-danger'>Your eater events</Link>}
+      {(props.curPath !== '/chefevents') && <Link to="/chefevents" className='NavBar-link btn btn-danger'>Your chef events</Link>}
       <Link to="" className='NavBar-link navbar-right btn btn-success' onClick={props.handleLogout} >LOG OUT</Link>
       <span className='NavBar-welcome navbar-right'>Welcome back, {props.user.name}</span>
     </div> :

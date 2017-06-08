@@ -10,6 +10,7 @@ import ChefEvent from '../ChefEvent/ChefEvent';
 import AllEvents from '../AllEvents/AllEvents';
 import DinnerEvent from '../DinnerEvent/DinnerEvent';
 import EaterEvent from '../EaterEvent/EaterEvent';
+import OwnChefEvents from '../OwnChefEvents/OwnChefEvents';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 
@@ -98,6 +99,14 @@ class App extends Component {
 
           <Route exact path='/eaterevents' render={(props) =>
             <EaterEvent
+              {...props}
+              user={this.state.user}
+              events={this.state.events}
+            />
+          }/>
+
+          <Route exact path='/chefevents' render={(props) =>
+            <OwnChefEvents
               {...props}
               user={this.state.user}
               events={this.state.events}
