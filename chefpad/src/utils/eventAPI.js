@@ -34,6 +34,7 @@ function attend(eventId) {
   .then(eventId => eventId);
 }
 
+// returns events where user not a chef or eater
 function index() {
   return fetch(BASE_URL + 'allevents', {
     method: 'GET',
@@ -42,15 +43,32 @@ function index() {
       'Authorization': `Bearer ${tokenService.getToken()}`
     }),
   })
-    .then(res => {
-      if (res.ok) return  res.json();
-      throw new Error('Error');
-    })
-    .then(events => events);
+  .then(res => {
+    if (res.ok) return  res.json();
+    throw new Error('Error');
+  })
+  .then(events => events);
+}
+
+function getUsersEvents(isChef) {
+  const url = BASE_URL + (isChef ? 'chef' : 'eater');
+  return fetch(url, {
+    method: 'GET',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    }),
+  })
+  .then(res => {
+    if (res.ok) return  res.json();
+    throw new Error('Error');
+  })
+  .then(events => events);
 }
 
 export default {
   createEvent,
   attend,
-  index
+  index,
+  getUsersEvents
 };

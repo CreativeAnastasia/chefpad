@@ -9,6 +9,9 @@ class DinnerEvent extends Component {
 <div>
         <Link to='/'>Cancel</Link>
   <div className="container">
+  <header className="thumbnail">
+    <h2 className="text-center">Congrats, you just published your event</h2>
+  </header>
     <div className="jumbotron">
       <div className="row">
         <div className="col-md-6 col-md-offset-3">

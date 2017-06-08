@@ -42,7 +42,7 @@ class ChefEvent extends Component {
       });
   }
 
-  render() {
+render() {
   return (
     <div className="ChefEvent">
             <div className="container">

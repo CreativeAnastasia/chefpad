@@ -96,9 +96,11 @@ class App extends Component {
               />
             }/>
 
-          <Route exact path='/eaterevent' render={(props) =>
+          <Route exact path='/eaterevents' render={(props) =>
             <EaterEvent
+              {...props}
               user={this.state.user}
+              events={this.state.events}
             />
           }/>
 

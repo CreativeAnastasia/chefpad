@@ -1,7 +1,6 @@
 var Event = require('../models/event');
 
 function index(req, res) {
-  console.log("events in the controller");
   Event.find({})
   .where('chef').ne(req.user._id)
   .where('eaters').ne(req.user._id)
@@ -10,8 +9,22 @@ function index(req, res) {
   });
 }
 
+function chefEvents(req, res) {
+  Event.find({'chef': req.user._id})
+  .exec().then(events => {
+    res.json(events);
+  });
+}
+
+function eaterEvents(req, res) {
+  Event.find({'eaters': req.user._id})
+  .exec().then(events => {
+    res.json(events);
+  });
+}
+
 function showevent(req, res) {
-  event.findOne({_id: req.body._id}).exec().then(event => {
+  event.findById(req.body._id).exec().then(event => {
       if (!event) return res.status(401).json({err: 'Problem with event'});
       res.json(event);
   });
@@ -48,5 +61,7 @@ module.exports = {
   index,
   showevent,
   createEvent,
-  attend
+  attend,
+  chefEvents,
+  eaterEvents
 };
