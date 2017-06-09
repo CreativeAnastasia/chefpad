@@ -3,7 +3,6 @@ import React from 'react';
 const Event = (props) => {
 
   return (
-    <div className="container">
       <div className="jumbotron">
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
@@ -13,7 +12,7 @@ const Event = (props) => {
 
         <div className="row">
           <div className="col-md-4">
-            <div className="thumbnail">
+            <div className="thumbnail" style={{"background-color":"#D5D8DC"}}>
               <img src={props.event.firstCoursePictureUrl} alt="first course picture"/>
               <div className="caption">
                 <h3>{props.event.firstCourseTitle}</h3>
@@ -22,7 +21,7 @@ const Event = (props) => {
           </div>
 
           <div className="col-md-4">
-            <div className="thumbnail">
+            <div className="thumbnail" style={{"background-color":"#D5D8DC"}}>
               <img src={props.event.secondCoursePictureUrl} alt="second course picture"/>
               <div className="caption">
                 <h3>{props.event.secondCourseTitle}</h3>
@@ -31,7 +30,7 @@ const Event = (props) => {
           </div>
 
           <div className="col-md-4">
-            <div className="thumbnail height200">
+            <div className="thumbnail" style={{"background-color":"#D5D8DC"}}>
               <img src={props.event.thirdCoursePictureUrl} alt="third course picture"/>
               <div className="caption">
                 <h3>{props.event.thirdCourseTitle}</h3>
@@ -60,7 +59,6 @@ const Event = (props) => {
         </div>
         {props.children}
       </div>
-    </div>
   );
 };
 
