@@ -20,7 +20,7 @@ const NavBar = (props) => {
     </div>;
 
   return (
-    <div className='navbar navbar-default'>
+    <div className='navbar NavBar'>
       {nav}
     </div>
   );

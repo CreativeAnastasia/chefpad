@@ -38,7 +38,7 @@ class EaterEvent extends Component {
         <header className="thumbnail">
           <h2 className="text-center">Here are your events you are attending</h2>
         </header>
-        {this.state.events.map((evt) =>
+        {this.state.events.map((evt, index) =>
           <Event event={evt} key={evt._id}>
           <div className="row">
             <div className="col-md-12 text-center">

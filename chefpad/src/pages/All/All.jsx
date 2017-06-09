@@ -25,8 +25,8 @@ class All extends Component {
         <header className="thumbnail">
           <h2 className="text-center">Here are all the events going on right now....</h2>
         </header>
-        {this.state.events.map((evt) =>
-          <Event event={evt} />
+        {this.state.events.map((evt, index) =>
+          <Event event={evt} key={index}/>
         )}
       </div>
 

@@ -3,10 +3,14 @@
 }
 
 body {
-  background-image: url(https://wallpaperbrowse.com/media/images/background-8.jpg);
+  background-image: url(https://static1.squarespace.com/static/57fb0af0197aea30e91e88b1/t/5825447f8419c21d8011ce5a/1478837378602/photodune-2487584-white-wood-background-m.jpg?format=1500w);
   font-family: 'Patrick Hand SC', cursive;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.jumbotron {
+  background: rgba(255, 255, 255, 0.7);
 }
 

@@ -41,7 +41,7 @@ class SignupForm extends Component {
     return (
       <div className="container">
         <div className="col-md-4 col-md-offset-4">
-          <div className="panel panel-default">
+          <div className="panel panel-primary">
             <header className="panel-heading text-center">Sign Up</header>
             <div className="panel-body">
               <form className="form" onSubmit={this.handleSubmit} >

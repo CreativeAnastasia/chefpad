@@ -33,7 +33,7 @@ class LoginForm extends Component {
     return (
       <div className="container">
         <div className="col-md-4 col-md-offset-4">
-          <div className="panel panel-default">
+          <div className="panel panel-success">
             <header className="panel-heading text-center">Log In</header>
             <div className="panel-body">
               <form className="form" onSubmit={this.handleSubmit} >
