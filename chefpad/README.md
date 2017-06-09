@@ -20,7 +20,6 @@ ChefPad is an app that lets attend dinner event at chef's house, or host you own
 * Bootstrap
 
 
-
 ##  Getting Started:
 
 [ChefPad](https://chefpad.herokuapp.com/)
