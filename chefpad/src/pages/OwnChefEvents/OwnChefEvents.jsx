@@ -20,6 +20,17 @@ class OwnChefEvents extends Component {
       }));
   }
 
+  deleteEvent = (eventId) => {
+    eventAPI.deleteEvent(eventId)
+    .then(events => {
+      this.setState({events});
+    })
+    .catch(err => {
+      console.log("Erro", err);
+    });
+
+  }
+
   render() {
     return (
       <div className="container">
@@ -27,7 +38,13 @@ class OwnChefEvents extends Component {
           <h2 className="text-center">Here are your events you are created as a chef!</h2>
         </header>
         {this.state.events.map((evt) =>
-          <Event event={evt} />
+          <Event event={evt} key={evt._id}>
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <button className="btn btn-danger btn-right" onClick={() => this.deleteEvent(evt._id)}>Remove it</button>
+              </div>
+            </div>
+          </Event>
         )}
       </div>
     );

@@ -52,6 +52,16 @@ function createEvent(req, res) {
     });
 }
 
+function deleteEvent (req, res) {
+  Event.findByIdAndRemove(req.params.id).exec()
+    .then(result => {
+      Event.find({'chef': req.user._id})
+        .exec().then(events => {
+          res.json(events);
+        });
+    });
+}
+
 function attend(req, res) {
 
   Event.findById(req.params.id).exec()
@@ -77,6 +87,7 @@ module.exports = {
   showAll,
   showevent,
   createEvent,
+  deleteEvent,
   attend,
   unAttend,
   chefEvents,

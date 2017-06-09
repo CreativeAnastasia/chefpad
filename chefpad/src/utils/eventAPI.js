@@ -17,14 +17,28 @@ function createEvent(event) {
   .then(event => event);
 }
 
+function deleteEvent(eventId) {
+  return fetch(BASE_URL + eventId + '/remove', {
+    method: 'GET',
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    })
+  })
+  .then(res => {
+    if (res.ok) return res.json();
+    throw new Error('Something went wrong!');
+  })
+  .then(events => events);
+}
+
 function attend(eventId) {
   return fetch(BASE_URL + eventId + '/attend', {
     method: 'POST',
     headers: new Headers({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${tokenService.getToken()}`
-    }),
-    body: JSON.stringify({})
+    })
   })
   .then(res => {
     if (res.ok) return res.json();
@@ -95,6 +109,7 @@ function getUsersEvents(isChef) {
 
 export default {
   createEvent,
+  deleteEvent,
   attend,
   unAttend,
   index,

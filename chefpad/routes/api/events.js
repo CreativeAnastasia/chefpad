@@ -7,6 +7,7 @@ router.get('/allevents', eventsCtrl.index);
 router.get('/all', eventsCtrl.showAll);
 router.get('/dinnerevent', eventsCtrl.showevent);
 router.get('/chef', eventsCtrl.chefEvents);
+router.get('/:id/remove', eventsCtrl.deleteEvent);
 router.get('/eater', eventsCtrl.eaterEvents);
 router.post('/chefevent', eventsCtrl.createEvent);
 router.post('/:id/attend', eventsCtrl.attend);
