@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import eventAPI from '../../utils/eventAPI';
 import Event from '../../components/Event/Event';
 
@@ -21,6 +20,18 @@ class EaterEvent extends Component {
       }));
   }
 
+  unAttend = (eventId) => {
+    eventAPI.unAttend(eventId)
+    .then(event => {
+      this.setState({
+        events: this.state.events.filter(event => event._id !== eventId)
+      });
+    })
+    .catch(err => {
+      console.log("Erro", err);
+    });
+  }
+
   render() {
     return (
       <div className="container">
@@ -28,7 +39,13 @@ class EaterEvent extends Component {
           <h2 className="text-center">Here are your events you are attending</h2>
         </header>
         {this.state.events.map((evt) =>
-          <Event event={evt} />
+          <Event event={evt} key={evt._id}>
+          <div className="row">
+            <div className="col-md-12 text-center">
+              <button className="btn btn-danger btn-right" onClick={() => this.unAttend(evt._id)}>Unattend it</button>
+            </div>
+          </div>
+        </Event>
         )}
       </div>
     );

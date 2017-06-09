@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {Switch, Route} from 'react-router-dom';
 import userService from '../../utils/userService';
-import eventService from '../../utils/eventService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
 import ChoosePage from '../ChoosePage/ChoosePage';
 import ChefEvent from '../ChefEvent/ChefEvent';
 import AllEvents from '../AllEvents/AllEvents';
+import All from '../All/All';
 import DinnerEvent from '../DinnerEvent/DinnerEvent';
 import EaterEvent from '../EaterEvent/EaterEvent';
 import OwnChefEvents from '../OwnChefEvents/OwnChefEvents';
@@ -93,6 +93,13 @@ class App extends Component {
             <AllEvents
               {...props}
               user={this.state.user}
+              events={this.state.events}
+              />
+            }/>
+
+          <Route exact path='/all' render={(props) =>
+            <All
+              {...props}
               events={this.state.events}
               />
             }/>

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import Event from '../../components/Event/Event';
 import eventAPI from '../../utils/eventAPI';
 
@@ -37,10 +36,10 @@ class AllEvents extends Component {
   render() {
     return (
 
-    <div>
-      <h2>Awesome sauce Eater, choose your event now!</h2>
-
-        <div className="container">
+      <div className="container">
+        <header className="thumbnail">
+          <h2 className="text-center">Awesome sauce Eater, choose your event now!</h2>
+        </header>
 
               {this.state.events.map((evt) =>
                 <Event event={evt}>
@@ -52,9 +51,7 @@ class AllEvents extends Component {
                 </Event>
               )}
 
-            <Link to='/choose'>Cancel</Link>
-         </div>
-      </div>
+        </div>
     );
   };
 

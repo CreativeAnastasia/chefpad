@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 
 const HomePage = (props) => {
 
@@ -12,8 +14,12 @@ const HomePage = (props) => {
                 </header>
 
                 <div className="row">
-                    <div className="col-lg-12 text-center">
+                    <div className="col-lg-6 text-center">
                         <h3>How it works...</h3>
+                    </div>
+
+                    <div className="col-lg-6 text-center">
+                        <Link to="/all" className='NavBar-link btn-lg btn-default'>Check out all events...</Link>
                     </div>
                 </div>
 
@@ -58,7 +64,6 @@ const HomePage = (props) => {
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <footer>

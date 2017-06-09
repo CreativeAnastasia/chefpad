@@ -9,6 +9,13 @@ function index(req, res) {
   });
 }
 
+function showAll(req, res) {
+  Event.find({})
+  .exec().then(events => {
+    res.json(events);
+  });
+}
+
 function chefEvents(req, res) {
   Event.find({'chef': req.user._id})
   .exec().then(events => {
@@ -57,11 +64,21 @@ function attend(req, res) {
   });
 }
 
+function unAttend(req, res) {
+  Event.findById(req.params.id).exec()
+  .then(event => {
+    event.eaters = event.eaters.filter(id => !id.equals(req.user._id));
+    event.save().then(() => res.json(event));
+  });
+}
+
 module.exports = {
   index,
+  showAll,
   showevent,
   createEvent,
   attend,
+  unAttend,
   chefEvents,
   eaterEvents
 };

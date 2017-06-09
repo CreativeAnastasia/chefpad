@@ -8,15 +8,15 @@ class ChefEvent extends Component {
     super(props);
     this.state = {
     time: '12:00',
-    city: 'LosAn',
-    address: '123Main',
-    eventTitle: 'Italian',
-    firstCourseTitle: 'fist course',
-    firstCoursePictureUrl: 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.jpeg',
-    secondCourseTitle: 'second course',
-    secondCoursePictureUrl: 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.jpeg',
-    thirdCourseTitle: 'third',
-    thirdCoursePictureUrl: 'http://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.jpeg',
+    city: 'Los Angeles',
+    address: '123 Main Street',
+    eventTitle: 'American Cuisine',
+    firstCourseTitle: 'Chicken Pho Noodle Salad',
+    firstCoursePictureUrl: 'http://www.trbimg.com/img-580fa712/turbine/la-1477421042-snap-photo/800/16x10?q=1',
+    secondCourseTitle: 'Salmon and Purple Potatoes',
+    secondCoursePictureUrl: 'https://shooterswaterfront.com/wp-content/uploads/2017/04/shooters_purple_potatoes-1.jpg',
+    thirdCourseTitle: 'Keylime Baked Sweet Alaska',
+    thirdCoursePictureUrl: 'https://shooterswaterfront.com/wp-content/uploads/2017/04/shooters_keylime_baked_alaska-1.jpg',
     price: '25',
     limitForAttendees: '5'
     };
