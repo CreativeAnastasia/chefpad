@@ -43,15 +43,15 @@ const Event = (props) => {
           <div className="col-md-8">
             <ul className="list-group">
               <li className="list-group-item list-group-item-success">
-                <span className="badge glyphicon glyphicon-time">.</span>
+                <span className="badge glyphicon glyphicon-time"></span>
                   Time of this dinner event: {props.event.time}
               </li>
               <li className="list-group-item list-group-item-info">
-                <span className="badge glyphicon glyphicon-cutlery">.</span>
-                  Maximum number of dinner mates and price for this event: {props.event.limitForAttendees} {props.event.price}
+                <span className="badge glyphicon glyphicon-cutlery"></span>
+                  Maximum number of dinner mates is {props.event.limitForAttendees}, and the price for this event is ${props.event.price}
               </li>
               <li className="list-group-item list-group-item-success">
-                <span className="badge glyphicon glyphicon-road">.</span>
+                <span className="badge glyphicon glyphicon-road"></span>
                   The addres for this awesome dinner event is: {props.event.address} {props.event.city}
               </li>
             </ul>

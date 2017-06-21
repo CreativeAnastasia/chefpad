@@ -21,7 +21,7 @@ const ChoosePage = (props) => {
                             <img src={"http://s3.amazonaws.com/bbcgoodfoodme/var/app/current/event_photos/73/original/nathan.png?1476697479"} alt=""/>
                             <div className="caption">
                                 <h3>Become a chef</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>If you have a talent and passion for cooking and a desire to serve delicious food to friends and family, then become a chef now.</p>
                                 <p>
                                 <Link to="/chefevent" className='btn btn-primary'>Be a Chef!</Link>                                </p>
                             </div>
@@ -30,10 +30,10 @@ const ChoosePage = (props) => {
 
                     <div className="col-md-5 hero-feature">
                         <div className="thumbnail">
-                            <img src={"https://behealthy.today/wp-content/uploads/2017/03/500-Calorie-diet.jpg"} alt=""/>
+                            <img src={"http://www.talkingtexture.com/wp-content/uploads/2014/07/10-Foods-That-Will-Make-Your-Hair-Grow-Now.jpg"} alt=""/>
                             <div className="caption">
                                 <h3>Become an eater</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p>Are you a foodie? Do you like to eat good food and try different types of cuisines all the time? Become an eater now.</p>
                                 <p>
                                   <Link to="/allevents" className='btn btn-primary'>Be an Eater!</Link>
                                 </p>

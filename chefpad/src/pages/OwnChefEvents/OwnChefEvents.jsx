@@ -35,7 +35,7 @@ class OwnChefEvents extends Component {
     return (
       <div className="container">
         <header className="thumbnail">
-          <h2 className="text-center">Here are your events you are created as a chef!</h2>
+          <h2 className="text-center">Here are your events you created as a chef!</h2>
         </header>
         {this.state.events.map((evt) =>
           <Event event={evt} key={evt._id}>
